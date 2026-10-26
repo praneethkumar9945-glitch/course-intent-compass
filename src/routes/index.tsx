@@ -54,6 +54,15 @@ const pillars = [
 
 const toolkit = ["Python", "TensorFlow", "PyTorch", "LangChain", "Hugging Face", "Adobe Photoshop", "Adobe Illustrator", "Premiere Pro", "After Effects", "Blender", "Figma", "Canva", "Excel", "PowerPoint", "Tableau", "Power BI", "Slack", "Notion", "Salesforce", "HubSpot"];
 
+const faqs: { q: string; a: string }[] = [
+  { q: "Which AI courses does Skill AI India offer in Mangalore?", a: "Generative AI & Agentic AI (10 months), AI Big Data & Advanced MLOps (12 months), Advanced Data Science (3 months), Certificate in Big Data (6 months), Expertise in Cyber Security (12 months), Certificate in Data Security (6 months) and Advanced Product Management (6 months)." },
+  { q: "Do Skill AI courses include placement support?", a: "Yes. Programs include live company projects, internship opportunities, mentorship and placement support. See our outcomes page for placement statistics, alumni roles and hiring partners." },
+  { q: "Are classes online or offline?", a: "Both. Programs run in online and offline modes from Mangalore, Karnataka, with full-time and part-time schedules." },
+  { q: "Can beginners without coding experience join the AI programs?", a: "Yes. The flagship AI program teaches Python from first principles in Module 1 — eligibility is based on aptitude and intent, not a specific prior degree." },
+  { q: "Which degrees can I study at Skill AI India?", a: "Undergraduate degrees (BCA, BBA, B.Com, BA) of 3 years and postgraduate degrees (MBA, MCA, M.Com, MA) of 2 years, all redesigned for the AI era with founder mentors and live projects." },
+  { q: "How do I apply or enquire?", a: "Use the enquiry form on any program page, or email Connect@skillaiindia.com. Our admissions team replies within 24 hours." },
+];
+
 /** Auto-reveal on scroll for any element with class "reveal" */
 function useScrollReveal() {
   useEffect(() => {
@@ -92,7 +101,7 @@ function Index() {
 
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden pb-20 lg:pb-0">
       {/* Nav */}
       <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
@@ -243,8 +252,20 @@ function Index() {
             ))}
           </div>
 
-          <div className="reveal mt-10 flex flex-wrap gap-3">
-            <CtaBtn primary onClick={() => setApply(true)}>Learn More</CtaBtn>
+          <div className="reveal mt-10 flex flex-wrap items-center gap-3">
+            <CtaBtn primary onClick={() => setApply(true)}>Enquire Now</CtaBtn>
+            <Link to="/outcomes" className="inline-flex items-center gap-2 rounded-full border border-lime px-5 sm:px-6 py-3 text-xs sm:text-sm font-bold tracking-wider text-lime transition-all hover:bg-lime hover:text-lime-foreground">
+              See Placement Outcomes <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="reveal mt-8 border-t border-border pt-6">
+            <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Students placed at</div>
+            <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-foreground/70">
+              {["Cred", "Meesho", "Razorpay", "Urban Company", "Blume", "PhonePe", "Zerodha", "Swiggy", "Zepto", "boAt"].map((h) => (
+                <span key={h}>{h}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -282,7 +303,7 @@ function Index() {
         </div>
 
         <div className="reveal mt-12 flex justify-center">
-          <CtaBtn primary onClick={() => setApply(true)}>Apply Now</CtaBtn>
+          <CtaBtn primary onClick={() => setApply(true)}>Enquire Now</CtaBtn>
         </div>
       </section>
 
@@ -306,7 +327,7 @@ function Index() {
               </div>
             </div>
             <div className="mt-7 sm:mt-8">
-              <CtaBtn primary onClick={() => setApply(true)}>Learn More</CtaBtn>
+              <CtaBtn primary onClick={() => setApply(true)}>Enquire Now</CtaBtn>
             </div>
           </div>
           <div className="reveal reveal-delay-2 aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl animate-float-soft">
@@ -329,6 +350,47 @@ function Index() {
         </div>
       </section>
 
+      {/* FAQ — direct answers help students and AI search engines */}
+      <section className="border-t border-border bg-surface/40 py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <div className="reveal">
+            <div className="text-xs sm:text-sm font-medium uppercase tracking-widest text-mint">FAQ</div>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight">Questions about Skill AI courses in Mangalore</h2>
+          </div>
+          <div className="mt-8 divide-y divide-border rounded-2xl border border-border bg-background">
+            {faqs.map((f) => (
+              <details key={f.q} className="group px-5 py-4">
+                <summary className="cursor-pointer list-none text-sm sm:text-base font-semibold">
+                  <span className="flex items-center justify-between gap-4">
+                    {f.q}
+                    <ChevronDown className="h-4 w-4 shrink-0 text-lime transition-transform group-open:rotate-180" />
+                  </span>
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Local — Mangalore */}
+      <section className="mx-auto max-w-5xl px-4 sm:px-6 py-14">
+        <div className="reveal rounded-3xl border border-border bg-surface p-7 sm:p-10">
+          <div className="text-xs sm:text-sm font-medium uppercase tracking-widest text-mint">Location</div>
+          <h2 className="mt-3 text-2xl sm:text-3xl font-bold tracking-tight">Study in Mangalore, Karnataka</h2>
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            Skill AI India runs its programs from Mangalore, serving students from Mangalore, Udupi and across Karnataka. Can't travel? The same programs are available online.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <Meta icon={<MapPin className="h-4 w-4 text-lime" />} label="Mangalore, Karnataka, India" />
+            <a href={`mailto:${SITE.email}`} className="text-sm font-semibold text-lime hover:underline">{SITE.email}</a>
+          </div>
+          <div className="mt-6">
+            <CtaBtn primary onClick={() => setApply(true)}>Enquire Now</CtaBtn>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="mx-auto max-w-5xl px-4 sm:px-6 py-20 sm:py-24 text-center">
         <h2 className="reveal text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight whitespace-pre-line text-gradient-lime">
@@ -338,7 +400,7 @@ function Index() {
           Join skills that turn ambition into opportunity, Applications for the 2026 cohort are now open.
         </p>
         <div className="reveal reveal-delay-2 mt-8 flex flex-wrap justify-center gap-3">
-          <CtaBtn primary onClick={() => setApply(true)}>Apply Now</CtaBtn>
+          <CtaBtn primary onClick={() => setApply(true)}>Enquire Now — Free Counselling</CtaBtn>
         </div>
       </section>
 
@@ -349,14 +411,24 @@ function Index() {
             <Logo />
             <p className="mt-4 text-sm text-muted-foreground">Mangalore, India</p>
           </div>
-          <FootCol title="Programs" items={["PG Program", "UG Program", "Online Programs", "Incubation"]} />
-          <FootCol title="School" items={["Outcomes", "Faculty", "Alumni", "Life at SKILL AI"]} />
-          <FootCol title="Contact" items={["Chat with us", "Connect@skillaiindia.com", "Press", "Careers"]} onItemClick={(i) => i === "Chat with us" && setApply(true)} />
+          <FootCol title="Programs" items={[{ label: "AI Courses", href: "/ai" }, { label: "Multimedia Courses", href: "/multimedia" }, { label: "Management Courses", href: "/management" }, { label: "UG & PG Programs", href: "/ug-programs" }, { label: "Online Programs", href: "/online-programs" }]} />
+          <FootCol title="School" items={[{ label: "Placement Outcomes", href: "/outcomes" }, { label: "Workshops", href: "/workshop" }, { label: "Incubation", href: "/incubation" }]} />
+          <FootCol title="Contact" items={[{ label: "Enquire Now", onClick: () => setApply(true) }, { label: SITE.email, href: `mailto:${SITE.email}` }]} />
         </div>
-        <div className="border-t border-border py-6 text-center text-xs text-muted-foreground whitespace-pre-line">
-          © 2026 Skill AI India School of AI. All Rights Reserved.{"\n\u00a0"}
+        <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
+          © 2026 Skill AI India — SKILL AI School of Business, Mangalore, Karnataka. All Rights Reserved.
         </div>
       </footer>
+
+      {/* Sticky mobile enquiry bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-border bg-background/95 p-3 backdrop-blur-md lg:hidden">
+        <button onClick={() => setApply(true)} className="flex-1 rounded-full bg-lime px-5 py-3 text-sm font-bold text-lime-foreground">
+          Enquire Now
+        </button>
+        <a href={`mailto:${SITE.email}`} className="rounded-full border border-lime px-5 py-3 text-sm font-bold text-lime">
+          Email Us
+        </a>
+      </div>
 
       {apply && <ApplyModal program="SKILL AI Programs" onClose={() => setApply(false)} />}
     </div>
