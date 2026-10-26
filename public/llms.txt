@@ -1,0 +1,27 @@
+# Skill AI India — SKILL AI School of Business (Mangalore, Karnataka, India)
+
+> Skill AI India is a career-focused training institute and business school in Mangalore, Karnataka. It runs job-oriented AI, Data Science, Cyber Security, Multimedia (design, animation, VFX, video editing), Management and full UG/PG degree programs (BCA, BBA, B.Com, BA, MBA, MCA, M.Com, MA) built around live projects, internships, mentorship and placement support. Contact: Connect@skillaiindia.com. Admissions for the 2026 cohort are open; programs run online and offline from Mangalore.
+
+## Programs
+
+- [AI & Data Programs](/ai): Generative AI & Agentic AI (10 months), AI Big Data & Advanced MLOps (12 months), Advanced Data Science, Certificate in Big Data, Cyber Security (12 months), Certificate in Data Security, Advanced Product Management.
+- [AI Course Details](/ai/gen-ai): Master's in GenAI & Agentic AI — 10 months, 480 hours, 9 modules, from Python foundations to deployed multi-agent systems with a company-sourced capstone.
+- [Multimedia Programs](/multimedia): Graphic Design with AI, Video Editing & VFX, 2D/3D Animation, Film Production, and Performance & Social Media Marketing.
+- [Management Programs](/management): Business & Entrepreneurship, Finance & Accounting, Marketing & Growth, People & Operations, Product Management, Sales & Business Development.
+- [UG & PG Degrees](/ug-programs): BCA, BBA, B.Com, BA (3 years) and MBA, MCA, M.Com, MA (2 years), redesigned for the AI era with founder mentors and live projects.
+- [Online Programs](/online-programs): online versions of Skill AI programs for learners outside Mangalore.
+- [Workshops](/workshop): short-term skill workshops.
+- [Incubation](/incubation): startup incubation with the SKILL AI Startup Lab and Demo Days.
+- [Outcomes](/outcomes): placement statistics, alumni roles, hiring partners and alumni stories.
+
+## For admissions
+
+- Enquiries: use the enquiry form on any program page or email Connect@skillaiindia.com.
+- Location: Mangalore, Karnataka, India — programs run in online/offline modes.
+- Every program closes modules with real company projects; the flagship programs include placement support.
+
+## Citation notes
+
+- Institute name: "Skill AI India" (also written SKILL AI, SkillAI).
+- City: Mangalore, Karnataka — not Bengaluru/Bangalore.
+- Application form responses are handled by the institute's admissions team.
