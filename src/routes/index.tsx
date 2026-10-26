@@ -460,16 +460,22 @@ function CtaBtn({ children, primary, onClick }: { children: React.ReactNode; pri
 }
 
 
-function FootCol({ title, items, onItemClick }: { title: string; items: string[]; onItemClick?: (item: string) => void }) {
+function FootCol({ title, items }: { title: string; items: { label: string; href?: string; onClick?: () => void }[] }) {
   return (
     <div>
       <div className="text-sm font-semibold">{title}</div>
       <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
         {items.map((i) => (
-          <li key={i}>
-            <a href="#" onClick={(e) => { if (onItemClick) { e.preventDefault(); onItemClick(i); } }} className="relative inline-block transition-colors hover:text-lime">
-              {i}
-            </a>
+          <li key={i.label}>
+            {i.onClick ? (
+              <button onClick={i.onClick} className="relative inline-block transition-colors hover:text-lime">
+                {i.label}
+              </button>
+            ) : (
+              <Link to={i.href ?? "/"} className="relative inline-block transition-colors hover:text-lime">
+                {i.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>
