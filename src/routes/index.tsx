@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import skillAiLogo from "@/assets/skill-ai-logo.png";
+import { pageHead, orgJsonLd, SITE } from "@/lib/seo";
 import { Calendar, Clock, MapPin, Award, Play, ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ApplyModal } from "./ug-programs";
@@ -12,14 +13,15 @@ import pillar4 from "@/assets/pillar-4.jpg";
 import demodayImg from "@/assets/demoday.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "SKILL AI School of Business — Build Real Businesses" },
-      { name: "description", content: "PGP in Startup Leadership & Entrepreneurship at SKILL AI. 12 months, full-time, Bangalore." },
-      { property: "og:title", content: "SKILL AI School of Business" },
-      { property: "og:description", content: "The business school where you build real businesses." },
-    ],
-  }),
+  head: () =>
+    pageHead({
+      title: "Skill AI India — AI, Multimedia & Management Courses in Mangalore with Placement Support",
+      description:
+        "Job-oriented AI, Data Science, Multimedia, Management and UG/PG degree courses in Mangalore, Karnataka. Live company projects, internships and placement support. Enquire for free counselling.",
+      path: "/",
+      ogType: "website",
+      schemas: [orgJsonLd()],
+    }),
   component: Index,
 });
 
@@ -121,7 +123,7 @@ function Index() {
           </ul>
           <div className="flex items-center gap-2">
             <button onClick={() => setApply(true)} className="hidden sm:inline-flex rounded-full border border-lime px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold tracking-wide text-lime transition-all hover:bg-lime hover:text-lime-foreground hover:scale-105">
-              CHAT WITH US
+              TALK TO A COUNSELLOR
             </button>
             <button
               aria-label="Open menu"
@@ -159,7 +161,7 @@ function Index() {
             })}
             <li className="mt-2">
               <button onClick={() => { setMenuOpen(false); setApply(true); }} className="w-full rounded-full bg-lime px-5 py-2.5 text-sm font-bold text-lime-foreground">
-                CHAT WITH US
+                ENQUIRE NOW
               </button>
             </li>
           </ul>
@@ -174,17 +176,20 @@ function Index() {
 
         <div className="grid items-center gap-10 lg:gap-12">
           <div className="reveal max-w-3xl">
-            <div className="mb-3 text-xs sm:text-sm font-medium uppercase tracking-widest text-mint whitespace-pre-line">{"\n"}</div>
+            <div className="mb-3 text-xs sm:text-sm font-medium uppercase tracking-widest text-mint">Admissions Open · 2026 Cohort · Mangalore</div>
             <h1 className="text-[2.25rem] sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
-              Start Career With <br />
-              <span className="text-gradient-lime">Skill AI</span>
+              Start Your Career With <br />
+              <span className="text-gradient-lime">Skill AI, Mangalore</span>
             </h1>
+            <p className="mt-4 max-w-2xl text-base sm:text-lg text-muted-foreground">
+              Job-ready <span className="font-semibold text-foreground">AI, Multimedia, Management and UG/PG courses in Mangalore</span> — taught through live company projects, internships and placement support.
+            </p>
 
             <div className="mt-6 sm:mt-8 flex flex-wrap gap-x-5 gap-y-3 text-sm">
-              <Meta icon={<Calendar className="h-4 w-4 text-lime" />} label="online/offline" />
-              <Meta icon={<Clock className="h-4 w-4 text-lime" />} label="Full-Time" />
-              <Meta icon={<MapPin className="h-4 w-4 text-lime" />} label="Mangalore" />
-              <Meta icon={<Award className="h-4 w-4 text-lime" />} label="Limited seats" />
+              <Meta icon={<Calendar className="h-4 w-4 text-lime" />} label="Online & Offline Classes" />
+              <Meta icon={<Clock className="h-4 w-4 text-lime" />} label="Full-Time & Part-Time" />
+              <Meta icon={<MapPin className="h-4 w-4 text-lime" />} label="Mangalore, Karnataka" />
+              <Meta icon={<Award className="h-4 w-4 text-lime" />} label="Limited Seats" />
             </div>
 
             <div className="mt-5 flex flex-wrap gap-2">
@@ -200,8 +205,9 @@ function Index() {
             </div>
 
             <button onClick={() => setApply(true)} className="mt-7 inline-flex items-center gap-3 rounded-full bg-lime px-5 sm:px-6 py-3 text-sm font-bold tracking-wider text-lime-foreground transition-all hover:scale-[1.04] hover:shadow-[0_8px_24px_oklch(0.72_0.2_50/0.35)] animate-pulse-glow">
-              KNOW MORE <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              ENQUIRE NOW — FREE COUNSELLING <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
+            <p className="mt-3 text-xs text-muted-foreground">Free counselling call · Our admissions team replies within 24 hrs</p>
 
           </div>
         </div>
